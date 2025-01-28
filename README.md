@@ -26,8 +26,8 @@ A powerful AutoGPT implementation with a modern graphical user interface built u
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/autogpt-project.git
-   cd autogpt-project
+   git clone https://github.com/sudo-Gitman/CodeAuto.git
+   cd CodeAuto-project
    ```
 
 2. Create a virtual environment:
@@ -50,7 +50,8 @@ A powerful AutoGPT implementation with a modern graphical user interface built u
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/autogpt-project.git
+  
+   git clone https://github.com/sudo-Gitman/CodeAuto.git
    cd autogpt-project
    ```
 
@@ -151,7 +152,7 @@ A powerful AutoGPT implementation with a modern graphical user interface built u
 ## Project Structure
 
 ```
-autogpt-project/
+CodeAuto-project/
 ├── autogpt.py           # Core AutoGPT implementation
 ├── gui.py              # GUI implementation
 ├── requirements.txt    # Python dependencies
