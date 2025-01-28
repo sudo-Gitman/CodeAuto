@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  autogpt:
+    build: .
+    container_name: autogpt
+    volumes:
+      # Mount persistent directories
+      - ./generated_code:/app/generated_code
+      - ./logs:/app/logs
+      - ./plugins:/app/plugins
+      # Mount X11 socket for GUI
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY=${DISPLAY}
+      - PYTHONUNBUFFERED=1
+      # Add any other environment variables here
+    network_mode: "host"  # Required for GUI on Linux
+    restart: unless-stopped
+    # Enable GPU if needed
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]

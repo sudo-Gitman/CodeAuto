@@ -1,0 +1,34 @@
+# Use Python 3.9 slim as base image
+FROM python:3.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    python3-tk \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements first
+COPY requirements.txt .
+
+# Install Python dependencies and testing packages
+RUN pip install --no-cache-dir -r requirements.txt && \
+    pip install --no-cache-dir pytest pytest-asyncio pytest-cov
+
+# Copy application code
+COPY . .
+
+# Create necessary directories
+RUN mkdir -p /app/generated_code /app/logs /app/plugins
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV PYTEST_ADDOPTS="--color=yes"
+
+# Create a non-root user
+RUN useradd -m testuser && chown -R testuser:testuser /app
+USER testuser
+
+# Default command (can be overridden)
+CMD ["python", "-m", "pytest", "tests/", "-v"]
