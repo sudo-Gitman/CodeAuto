@@ -1,3 +1,7 @@
+
+![DALL·E 2025-01-28 23 06 21 - A retro-style GitHub repository banner for 'CodeAuto'  The design features an 80s aesthetic with vibrant neon colors, a grid background, and glowing t](https://github.com/user-attachments/assets/36fca34b-68d7-4a37-9789-c15e3fddc5eb)
+
+
 # AutoGPT with Modern GUI
 
 A powerful AutoGPT implementation with a modern graphical user interface built using CustomTkinter. This application combines the power of large language models with an intuitive interface for enhanced developer productivity.
